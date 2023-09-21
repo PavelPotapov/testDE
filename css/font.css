@@ -1,0 +1,13 @@
+@font-face {
+	font-family: "Galien";
+	src: url("../fonts/Galien\ Regular.woff2") format("woff2"),
+		url("../fonts/Galien\ Regular.woff") format("woff"),
+		url("../fonts/Galien\ Regular.ttf") format("ttf");
+}
+
+@font-face {
+	font-family: "Gilroy";
+	src: url("../fonts/Gilroy-Regular.woff") format("woff2"),
+		url("../fonts/Gilroy-Regular.woff") format("woff"),
+		url("../fonts/Galien\ Regular.ttf") format("ttf");
+}

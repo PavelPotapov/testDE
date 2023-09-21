@@ -1,0 +1,107 @@
+.contacts {
+	margin-top: 40px;
+
+	&__top {
+		background-image: url("../../../../public/images/svg/contacts.svg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		min-height: 250px;
+	}
+
+	&__title {
+		font-size: 44px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 74px; /* 168.182% */
+		letter-spacing: 1.76px;
+	}
+
+	&__subtitle {
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 30px; /* 150% */
+		letter-spacing: 0.8px;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		min-height: 250px;
+		justify-content: center;
+		color: var(--text-color-main);
+		text-align: center;
+		font-family: var(--main-font);
+	}
+
+	&__form-container {
+		display: flex;
+		margin-top: 65px;
+		color: var(--dark-blue);
+		font-family: var(--main-font);
+	}
+
+	&__form-data {
+		flex: 1;
+		margin-left: 212px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__form-data p {
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 26px; /* 162.5% */
+		letter-spacing: 0.8px;
+        margin-bottom: 16px;
+	}
+
+	&__form {
+		flex: 1;
+		margin-right: 212px;
+	}
+
+	&__form-img {
+		display: block;
+		align-self: center;
+		margin-bottom: 71px;
+	}
+
+	&__address-group,
+	&__service-group,
+	&__phone-group {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 40px;
+	}
+
+	&__address-title,
+	&__service-title,
+	&__phone-title {
+		color: var(--dark-blue);
+		font-family: var(--main-font);
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 30px; /* 150% */
+		letter-spacing: 0.8px;
+		margin-bottom: 24px;
+	}
+
+    &__address-subtitle {
+        max-width: 300px;
+    }
+
+	&__icon {
+		display: inline-block;
+		margin-right: 16px;
+	}
+
+	&__row {
+		display: flex;
+		align-items: center;
+	}
+}

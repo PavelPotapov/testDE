@@ -1,0 +1,98 @@
+@include desktop {
+	.footer {
+	}
+}
+
+@include desktop2 {
+	.footer {
+		&__container-top {
+			flex-direction: column;
+		}
+		&__subtitle {
+			margin-bottom: 50px;
+		}
+
+		&__btn {
+			margin-bottom: 30px;
+		}
+
+		&__top-title {
+			max-width: 100%;
+			text-align: center;
+		}
+
+		&__subtitle {
+			max-width: 100%;
+			text-align: center;
+		}
+
+		&__top--col {
+			max-width: 100%;
+		}
+	}
+}
+
+@include laptop {
+	.footer {
+		&__top {
+			padding-top: 91px;
+			padding-left: 69px;
+			padding-right: 113px;
+		}
+
+		&__subtitle {
+			margin-bottom: 50px;
+		}
+
+		&__btn {
+			margin-bottom: 30px;
+		}
+
+		&__top-title {
+			max-width: 100%;
+			text-align: center;
+		}
+
+		&__subtitle {
+			max-width: 100%;
+			text-align: center;
+		}
+
+		&__top--col {
+			max-width: 100%;
+		}
+
+		&__bottom {
+			padding-left: 69px;
+		}
+	}
+}
+
+@include tablet {
+	.footer {
+		&__container-bottom {
+			max-width: 700px;
+			row-gap: 55px;
+		}
+
+		&__top {
+			padding-left: 39px;
+		}
+		&__bottom {
+			padding-left: 39px;
+		}
+	}
+}
+
+@include mobile {
+	.footer {
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.footer {
+		&__container-bottom {
+			max-width: 340px;
+		}
+	}
+}

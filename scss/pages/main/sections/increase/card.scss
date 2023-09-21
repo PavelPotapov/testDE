@@ -1,0 +1,73 @@
+.card {
+	width: 380px;
+	height: 525px;
+	border-radius: 10px;
+	background: var(--text-color-main);
+	box-shadow: 5px 20px 50px 0px rgba(16, 112, 177, 0.2);
+	padding: 48px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	&__logo {
+		display: block;
+		margin-bottom: 56px;
+		align-self: center;
+	}
+	&__title {
+		color: var(--dark-blue);
+		font-family: var(--main-font);
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 30px; /* 150% */
+		letter-spacing: 1px;
+		text-align: left;
+		margin-bottom: 16px;
+	}
+
+	&__info {
+		width: 284px;
+		height: 103px;
+		color: var(--dark-blue);
+		font-family: var(--main-font);
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 26px; /* 162.5% */
+		letter-spacing: 0.8px;
+		margin-bottom: 32px;
+	}
+
+	&__btn {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		color: var(--light-blue);
+		font-family: Gilroy;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 30px; /* 214.286% */
+		letter-spacing: 0.7px;
+		position: relative;
+		padding: 0;
+	}
+
+	&__btn::after {
+		content: "";
+		background-image: url("../public/images/svg/arrow.svg");
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		margin-left: 24px;
+		position: absolute;
+		top: 5px;
+	}
+}
+
+@include mobile {
+	.card {
+		width: 325px;
+		padding: 30px;
+	}
+}

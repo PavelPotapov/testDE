@@ -1,0 +1,15 @@
+.header {
+	display: flex;
+	padding: 5px;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 48px;
+	&__logo {
+		display: block;
+		margin-left: 83px;
+	}
+
+	&__burger {
+		margin-right: 83px;
+	}
+}

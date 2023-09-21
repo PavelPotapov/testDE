@@ -1,0 +1,22 @@
+.btn {
+	width: 220px;
+	height: 56px;
+	color: var(--text-color-main);
+	text-align: center;
+	font-family: var(--main-font);
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 26px; /* 162.5% */
+	letter-spacing: 0.64px;
+	border-radius: 10px;
+	background: var(--light-blue);
+	box-shadow: 5px 10px 20px 0px rgba(53, 110, 173, 0.2);
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.2s linear;
+
+	&:hover {
+		background-color: var(--dark-blue);
+	}
+}

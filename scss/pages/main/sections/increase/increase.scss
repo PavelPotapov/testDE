@@ -1,0 +1,36 @@
+@import "./card.scss";
+
+.increase {
+	padding-top: 192px;
+	padding-bottom: 212px;
+
+	&__title {
+		color: var(--blue);
+		font-family: var(--main-font);
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 46px; /* 127.778% */
+		letter-spacing: 1.8px;
+		width: 358px;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-100%);
+	}
+
+	&__container-row {
+		display: flex;
+		justify-content: center;
+		gap: 100px;
+	}
+
+	&__container-col {
+		display: flex;
+		flex-direction: column;
+		gap: 100px;
+	}
+
+	&__item1 {
+		align-self: center;
+	}
+}

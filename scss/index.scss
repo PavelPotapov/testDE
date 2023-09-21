@@ -1,0 +1,80 @@
+:root {
+	--main-font: "Gilroy";
+	--second-font: "Galien";
+	--dark-blue: #1f3f68;
+	--blue: #316099;
+	--light-blue: #5a98d0;
+	--second-light-blue: #356ead;
+
+	--gray: #85888e;
+	--text-color-main: #fff;
+}
+
+@import "./variables.scss";
+@import "./media_breakpoints.scss";
+
+@import "./burger.scss";
+@import "./sidebar.scss";
+@import "./btn.scss";
+@import "./form.scss";
+@import "./modal.scss";
+@import "./header/header.scss";
+@import "./header/header-media.scss";
+
+@import "./pages/main/sections/greeting/greeting.scss";
+@import "./pages/main/sections/greeting/greeting-media.scss";
+@import "./pages/main/sections/increase/increase.scss";
+@import "./pages/main/sections/increase/increase-media.scss";
+@import "./pages/main/sections/clients/clients.scss";
+@import "./pages/main/sections/clients/clients-media.scss";
+
+@import "./footer/footer.scss";
+@import "./footer/footer-media.scss";
+
+@import "./pages/contacts/sections/contacts.scss";
+
+.html {
+	overflow-x: hidden;
+}
+.body {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+*,
+::after,
+::before {
+	box-sizing: border-box;
+}
+
+p {
+	margin: 0;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+.container {
+	max-width: 1366px;
+	margin: 0 auto;
+	position: relative;
+}

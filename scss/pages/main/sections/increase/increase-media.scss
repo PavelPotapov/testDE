@@ -1,0 +1,38 @@
+@include desktop {
+}
+
+@include laptop {
+	.increase {
+	}
+}
+
+@include tablet {
+	.increase {
+		padding-top: 300px;
+		position: relative;
+		&__title {
+			position: absolute;
+			top: 100px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 80%;
+			text-align: center;
+		}
+		&__container-row {
+			flex-direction: column;
+		}
+
+		&__container-col {
+			align-items: center;
+		}
+	}
+}
+
+@include mobile {
+	.increase {
+		&__title {
+			top: 70px;
+			left: 52%;
+		}
+	}
+}

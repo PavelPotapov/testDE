@@ -1,0 +1,48 @@
+.modal {
+	display: none;
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.7);
+
+	&__active {
+		display: block;
+	}
+
+	&__content {
+		max-width: 540px;
+		margin: 0 auto;
+		height: 100vh;
+		position: relative;
+		top: 10%;
+	}
+
+  
+
+	&__cross {
+		position: absolute;
+        right: 0;
+		width: 40px;
+		height: 40px;
+        cursor: pointer;
+	}
+
+	&__cross:before,
+	&__cross:after {
+		content: "";
+		position: absolute;
+		background-color: black;
+		width: 2px;
+		height: 100%;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&__cross:before {
+		transform: translateX(-50%) rotate(45deg);
+	}
+
+	&__cross:after {
+		transform: translateX(-50%) rotate(-45deg);
+	}
+}

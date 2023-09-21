@@ -1,0 +1,50 @@
+@include desktop {
+	.header {
+		&__logo {
+			margin-left: 43px;
+		}
+		&__burger {
+			margin-right: 43px;
+		}
+	}
+}
+
+@include laptop {
+	.header {
+		margin-top: 30px;
+		&__logo {
+			margin-left: 23px;
+		}
+		&__burger {
+			margin-right: 23px;
+		}
+	}
+}
+
+@include tablet {
+	.header {
+		margin-top: 20px;
+		.header {
+			&__logo {
+				margin-left: 23px;
+			}
+			&__burger {
+				margin-right: 23px;
+			}
+		}
+	}
+}
+
+@include mobile {
+	.header {
+		margin-top: 10px;
+		.header {
+			&__logo {
+				margin-left: 10px;
+			}
+			&__burger {
+				margin-right: 10px;
+			}
+		}
+	}
+}

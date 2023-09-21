@@ -1,0 +1,169 @@
+.form {
+	max-width: 540px;
+	min-height: 800px;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 5px 10px 50px 0px rgba(16, 112, 177, 0.2);
+	padding: 56px;
+	color: var(--dark-blue);
+	font-family: var(--main-font);
+	overflow-y: auto;
+}
+
+.form-row {
+	display: flex;
+}
+
+.form-label {
+	display: block;
+}
+
+.form-input {
+	display: block;
+	padding: 21px 36px;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 5px 10px 50px 0px rgba(16, 112, 177, 0.2);
+	outline: none;
+	border: 1px solid var(--second-light-blue);
+	max-width: 428px;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 30px; /* 187.5% */
+	letter-spacing: 0.64px;
+	color: inherit;
+}
+
+.form-col {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.form-title {
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 30px; /* 150% */
+	letter-spacing: 0.8px;
+	margin-bottom: 48px;
+}
+
+.form-label {
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 30px; /* 187.5% */
+	letter-spacing: 0.64px;
+	margin-bottom: 8px;
+}
+
+.form-textarea {
+	max-width: 428px;
+	min-height: 144px;
+	padding: 21px 36px;
+}
+
+.form-textarea {
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 30px; /* 187.5% */
+	letter-spacing: 0.64px;
+	color: inherit;
+	resize: none;
+	outline: none;
+	border: 1px solid var(--second-light-blue);
+	border-radius: 10px;
+	// margin-bottom: 72px;
+}
+
+.form-textarea::after {
+	content: "val";
+	width: 10px;
+	height: 10px;
+	display: block;
+}
+
+.form-submit {
+	border-radius: 10px;
+	background: var(--second-light-blue);
+	/* shadow1 */
+	box-shadow: 5px 20px 50px 0px rgba(16, 112, 177, 0.2);
+	padding: 23px;
+	text-align: center;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 26px; /* 162.5% */
+	letter-spacing: 0.64px;
+	cursor: pointer;
+	color: var(--text-color-main);
+	border: none;
+	outline: none;
+}
+
+.form-submit:hover {
+	background-color: aqua;
+}
+
+.form-submit:active {
+	background-color: rgb(4, 32, 32);
+}
+
+.validate {
+	display: block;
+	opacity: 0;
+	color: red;
+}
+
+.validate-active {
+	opacity: 1;
+}
+
+.validate-text-area {
+	margin-bottom: 72px;
+}
+
+.validate-active-success {
+	opacity: 1;
+	color: green;
+}
+.validate-email,
+.validate-name {
+	margin-bottom: 32px;
+}
+
+@include desktop {
+}
+
+@include laptop {
+}
+
+@include tablet {
+}
+
+@include tablet2 {
+}
+
+@include mobile {
+}
+
+@media only screen and (max-height: 800px) {
+	.form {
+		padding-top: 10px;
+	}
+
+	.form-title {
+		margin-bottom: 10px;
+	}
+
+	.validate-email,
+	.validate-name {
+		margin-bottom: 8px;
+	}
+	.validate-text-area {
+		margin-bottom: 20px;
+	}
+}

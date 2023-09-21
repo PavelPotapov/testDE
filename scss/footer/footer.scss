@@ -1,0 +1,154 @@
+.footer {
+	color: var(--text-color-main);
+	font-family: var(--main-font);
+	background: var(--light-blue);
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: -1px;
+		background-color: var(--blue);
+		width: 93%;
+		height: 100%;
+		border-radius: 0px 200px 0px 0px;
+		z-index: 0;
+	}
+
+	&__top {
+		padding-top: 91px;
+		padding-left: 213px;
+		padding-right: 293px;
+	}
+
+	&__container-top {
+		border-bottom: 1px solid #6d9ecb;
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+
+		&::after {
+			content: "";
+			border-bottom: 1px solid #6d9ecb;
+			position: absolute;
+			width: 50vw;
+			bottom: -1px;
+			left: -50vw;
+			display: block;
+		}
+	}
+
+	&__top-title {
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 46px; /* 127.778% */
+		letter-spacing: 1.8px;
+		max-width: 320px;
+	}
+
+	&__subtitle {
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 26px; /* 162.5% */
+		letter-spacing: 0.8px;
+		opacity: 0.4;
+		margin-bottom: 96px;
+	}
+
+	&__top--col {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		max-width: 460px;
+	}
+
+	&__btn {
+		align-self: center;
+	}
+
+	&__bottom {
+		padding-left: 213px;
+		padding-top: 96px;
+	}
+
+	&__container-bottom {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 64px;
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		gap: 24px;
+	}
+
+	&__logo-name {
+		font-size: 28px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 46px; /* 164.286% */
+		letter-spacing: 0.56px;
+	}
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		max-width: 300px;
+		gap: 33px;
+		margin-right: 100px;
+	}
+
+	&__contacts-list {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+	}
+	&__letter {
+		display: block;
+		font-weight: 600;
+	}
+	&__item {
+		display: flex;
+		gap: 16px;
+		font-size: 16px;
+		font-style: normal;
+		line-height: 26px; /* 162.5% */
+		letter-spacing: 0.8px;
+	}
+
+	&__text {
+		font-weight: 400;
+	}
+
+	&__aboutus,
+	&__followus {
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 30px; /* 150% */
+		letter-spacing: 1px;
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+	}
+
+	&__aboutus-list,
+	&__followus-list {
+		display: flex;
+		gap: 16px;
+		font-weight: 400;
+		flex-direction: column;
+		font-size: 16px;
+	}
+
+	&__aboutus {
+		margin-right: 77px;
+	}
+
+	&__copyright {
+		padding-bottom: 64px;
+	}
+}
