@@ -16,14 +16,12 @@
 		top: 10%;
 	}
 
-  
-
 	&__cross {
 		position: absolute;
-        right: 0;
+		right: 0;
 		width: 40px;
 		height: 40px;
-        cursor: pointer;
+		cursor: pointer;
 	}
 
 	&__cross:before,
@@ -44,5 +42,16 @@
 
 	&__cross:after {
 		transform: translateX(-50%) rotate(-45deg);
+	}
+
+	&__popup {
+        display: none;
+		background: rgba(0, 0, 0, 0.7);
+		position: fixed;
+		inset: 0;
+	}
+
+	&__popup-active {
+		display: block;
 	}
 }

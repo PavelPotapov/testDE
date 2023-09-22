@@ -23,6 +23,8 @@ function clearForm() {
 	spanEmail.classList.remove("validate-active")
 	spanName.classList.remove("validate-active")
 	spanText.classList.remove("validate-active")
+	spanSubmit.classList.remove("validate-active-success")
+	spanSubmit.classList.remove("validate-active")
 	userName.value = ""
 	email.value = ""
 	text.value = ""
@@ -35,6 +37,12 @@ function hideForm() {
 
 function showForm() {
 	modal.classList.add("modal__active")
+}
+
+function submitError() {
+	spanSubmit.innerText = "Ошибка при отправке"
+	spanSubmit.classList.add("validate-active")
+	submitBtn.value = "SUBMIT"
 }
 
 const modal = document.querySelector(".modal")
@@ -61,6 +69,7 @@ cross.addEventListener("click", function (e) {
 	hideForm()
 })
 
+//скрываем модальное окно при клике на вншенюю область вокруг окна
 modal.addEventListener("click", function (e) {
 	if (e.target === modal) {
 		hideForm()
@@ -109,19 +118,17 @@ submitBtn.addEventListener("click", function (e) {
 								email.value = ""
 								text.value = ""
 								/* здесь можно и закрывать окно с показыванием popup уведомления */
+
 							}, 1500)
 						})
 						.catch((err) => {
-							spanSubmit.innerText = "Ошибка при отправке"
-							spanSubmit.classList.add("validate-active")
+							submitError()
 						})
 				} else {
-					spanSubmit.innerText = "Ошибка при отправке"
-					spanSubmit.classList.add("validate-active")
+					submitError()
 				}
 			} catch (e) {
-				spanSubmit.innerText = "Ошибка при отправке"
-				spanSubmit.classList.add("validate-active")
+				submitError()
 			}
 		}
 	} else {
