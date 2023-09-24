@@ -2,18 +2,25 @@
 	display: none;
 	position: fixed;
 	inset: 0;
-	background: rgba(0, 0, 0, 0.7);
+	//background: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(8px);
+	overflow-y: auto;
 
 	&__active {
 		display: block;
 	}
 
 	&__content {
+		display: none;
 		max-width: 540px;
 		margin: 0 auto;
 		height: 100vh;
 		position: relative;
 		top: 10%;
+	}
+
+	&__content-active {
+		display: block;
 	}
 
 	&__cross {
@@ -45,13 +52,38 @@
 	}
 
 	&__popup {
-        display: none;
-		background: rgba(0, 0, 0, 0.7);
+		display: none;
 		position: fixed;
-		inset: 0;
+		min-height: 500px;
+		max-width: 540px;
+		top: 0;
+		left: 50%;
+		top: 10%;
+		transform: translateX(-50%);
 	}
 
 	&__popup-active {
 		display: block;
+	}
+
+	&__popup-content {
+		border-radius: 10px;
+		background: #fff;
+		box-shadow: 5px 10px 50px 0px rgba(16, 112, 177, 0.2);
+		padding: 56px;
+		color: var(--dark-blue);
+		font-family: var(--main-font);
+		margin: 0 auto;
+		top: 10%;
+	}
+
+	&__popup-text {
+		text-align: center;
+		font-size: 25px;
+	}
+
+	&__cross-popup {
+		position: absolute;
+		z-index: 1;
 	}
 }

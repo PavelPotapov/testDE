@@ -15,28 +15,49 @@ async function fetchData(formAction) {
 		},
 	})
 	res = res.json()
-	console.log(res, typeof res)
 	return res
 }
 
 function clearForm() {
-	spanEmail.classList.remove("validate-active")
-	spanName.classList.remove("validate-active")
-	spanText.classList.remove("validate-active")
-	spanSubmit.classList.remove("validate-active-success")
-	spanSubmit.classList.remove("validate-active")
+	spanEmail.classList.remove("form__validate-active")
+	spanName.classList.remove("form__validate-active")
+	spanText.classList.remove("form__validate-active")
+	spanSubmit.classList.remove("form__validate-active-success")
+	spanSubmit.classList.remove("form__validate-active")
 	userName.value = ""
 	email.value = ""
 	text.value = ""
 }
 
 function hideForm() {
-	modal.classList.remove("modal__active")
+	//modal__content
+	modalForm.classList.remove("modal__content-active")
 	clearForm()
 }
 
 function showForm() {
+	modalForm.classList.add("modal__content-active")
+}
+
+function showModal() {
 	modal.classList.add("modal__active")
+	html.classList.add("disabled-scroll")
+}
+
+function hideModal() {
+	clearForm()
+	hideForm()
+	hidePopup()
+	modal.classList.remove("modal__active")
+	html.classList.remove("disabled-scroll")
+}
+
+function hidePopup() {
+	modalPopup.classList.remove("modal__popup-active")
+}
+
+function showPopup() {
+	modalPopup.classList.add("modal__popup-active")
 }
 
 function submitError() {
@@ -45,81 +66,117 @@ function submitError() {
 	submitBtn.value = "SUBMIT"
 }
 
-const modal = document.querySelector(".modal")
-const submitBtn = document.querySelector(".form-submit")
-const cross = document.querySelector(".modal__cross")
-const footerBtn = document.querySelector(".footer__btn")
+const modal = document.querySelector(`div[data-js-modal="modal"]`)
+const modalForm = document.querySelector(
+	`div[data-js-modal-content="modal-content"]`
+)
+const modalPopup = document.querySelector(
+	`div[data-js-modal-popup="modal-popup"]`
+)
+const form = document.querySelector(`form[data-js="form"]`)
+const cross = document.querySelector(`div[data-js-cross-form="cross-form"]`)
+const crossPopup = document.querySelector(
+	`div[data-js-cross-popup="cross-popup"]`
+)
+const submitBtn = document.querySelector(
+	`input[data-js-form-submit="form-submit"]`
+)
+const footerBtn = document.querySelector(
+	`button[data-js-footer-btn="footer-btn"]`
+)
+const userName = document.querySelector(
+	`input[data-js-input-name="input-name"]`
+)
+const email = document.querySelector(`input[data-js-input-email="input-email"]`)
+const text = document.querySelector(`textarea[data-js-input-text="input-text"]`)
+const spanEmail = document.querySelector(`span[data-form=${email.id}]`)
+const spanName = document.querySelector(`span[data-form=${userName.id}]`)
+const spanText = document.querySelector(`span[data-form=${text.id}]`)
+const spanSubmit = document.querySelector(`span[data-form=${submitBtn.id}]`)
+const html = document.querySelector("html")
 
-const userName = document.querySelector("#form-input-name")
-const email = document.querySelector("#form-input-email")
-const text = document.querySelector("#form-textarea")
-
-const spanEmail = document.querySelector(`span[data-form=${email.id}`)
-const spanName = document.querySelector(`span[data-form=${userName.id}`)
-const spanText = document.querySelector(`span[data-form=${text.id}`)
-const spanSubmit = document.querySelector(`span[data-form=${submitBtn.id}`)
-
-//показываем модальное окно при клике на кнопку
-footerBtn.addEventListener("click", function (e) {
-	showForm()
-})
-
-//скрываем модальное окно при клике на кнопку крестика
-cross.addEventListener("click", function (e) {
-	hideForm()
-})
-
-//скрываем модальное окно при клике на вншенюю область вокруг окна
-modal.addEventListener("click", function (e) {
-	if (e.target === modal) {
-		hideForm()
-	}
-})
-
-//отправка и валидация формы
-submitBtn.addEventListener("click", function (e) {
-	e.preventDefault()
-
-	spanEmail.classList.remove("validate-active")
-	spanEmail.classList.remove("validate-active-success")
-	submitBtn.value = "SENDING..."
-
-	email.addEventListener("input", () => {
-		spanEmail.classList.remove("validate-active")
+if (
+	modal &&
+	modalPopup &&
+	modalForm &&
+	form &&
+	cross &&
+	crossPopup &&
+	submitBtn &&
+	footerBtn &&
+	userName &&
+	email &&
+	text &&
+	spanEmail &&
+	spanName &&
+	spanText &&
+	spanSubmit &&
+	html
+) {
+	//показываем модальное окно при клике на кнопку
+	footerBtn.addEventListener("click", function (e) {
+		showModal()
+		showForm()
 	})
 
-	userName.addEventListener("input", () => {
-		spanName.classList.remove("validate-active")
+	//скрываем модальное окно при клике на кнопку крестика
+	cross.addEventListener("click", function (e) {
+		hideModal()
 	})
 
-	text.addEventListener("input", () => {
-		spanText.classList.remove("validate-active")
+	crossPopup.addEventListener("click", function (e) {
+		hideModal()
 	})
 
-	const validateEmail = validatingEmail(email.value)
-	const validateName = validatingText(userName.value)
-	const validateText = validatingText(text.value)
-	if (validateEmail && validateName && validateText) {
-		const dataForm = e.currentTarget?.dataset?.form
-		if (dataForm) {
-			let formAction = document.querySelector(`form[data-form=${dataForm}]`)
-				?.dataset.jsForm
+	//скрываем модальное окно при клике на вншенюю область вокруг окна
+	modal.addEventListener("click", function (e) {
+		console.log(e, "!!!")
+		if (e.target === modal) {
+			hideModal()
+		}
+	})
+
+	//отправка и валидация формы
+	form.addEventListener("submit", function (e) {
+		e.preventDefault()
+
+		spanEmail.classList.remove("form__validate-active")
+		spanEmail.classList.remove("form__validate-active-success")
+		submitBtn.value = "SENDING..."
+
+		email.addEventListener("input", () => {
+			spanEmail.classList.remove("form__validate-active")
+		})
+
+		userName.addEventListener("input", () => {
+			spanName.classList.remove("form__validate-active")
+		})
+
+		text.addEventListener("input", () => {
+			spanText.classList.remove("form__validate-active")
+		})
+
+		const validateEmail = validatingEmail(email.value)
+		const validateName = validatingText(userName.value)
+		const validateText = validatingText(text.value)
+		if (validateEmail && validateName && validateText) {
+			let formAction = form?.dataset.jsForm
 			formAction = JSON.parse(formAction)
 			try {
 				if (formAction.method === "POST" || formAction.method === "GET") {
-					fetchData(formAction, dataForm)
+					fetchData(formAction)
 						.then((res) => {
 							submitBtn.value = "SUBMIT"
 							spanSubmit.innerText = "Данные отправлены"
-							spanSubmit.classList.add("validate-active-success")
+							spanSubmit.classList.add("form__validate-active-success")
 							setTimeout(() => {
-								spanSubmit.classList.remove("validate-active-success")
+								spanSubmit.classList.remove("form__validate-active-success")
 								userName.value = ""
 								email.value = ""
 								text.value = ""
-								/* здесь можно и закрывать окно с показыванием popup уведомления */
-
-							}, 1500)
+								hideForm()
+								showPopup()
+							}, 500)
 						})
 						.catch((err) => {
 							submitError()
@@ -130,20 +187,20 @@ submitBtn.addEventListener("click", function (e) {
 			} catch (e) {
 				submitError()
 			}
+		} else {
+			if (!validateEmail) {
+				spanEmail.innerText = "Неверно введённый email"
+				spanEmail.classList.add("form__validate-active")
+			}
+			if (!validateName) {
+				spanName.innerText = "Пустое имя"
+				spanName.classList.add("form__validate-active")
+			}
+			if (!validateText) {
+				spanText.innerText = "Пустое поле"
+				spanText.classList.add("form__validate-active")
+			}
+			submitBtn.value = "SUBMIT"
 		}
-	} else {
-		if (!validateEmail) {
-			spanEmail.innerText = "Неверно введённый email"
-			spanEmail.classList.add("validate-active")
-		}
-		if (!validateName) {
-			spanName.innerText = "Пустое имя"
-			spanName.classList.add("validate-active")
-		}
-		if (!validateText) {
-			spanText.innerText = "Пустое поле"
-			spanText.classList.add("validate-active")
-		}
-		submitBtn.value = "SUBMIT"
-	}
-})
+	})
+}

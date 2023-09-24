@@ -4,6 +4,7 @@
 	align-items: center;
 	justify-content: space-between;
 	margin-top: 48px;
+	position: relative;
 	&__logo {
 		display: block;
 		margin-left: 83px;
@@ -11,5 +12,6 @@
 
 	&__burger {
 		margin-right: 83px;
+		cursor: pointer;
 	}
 }

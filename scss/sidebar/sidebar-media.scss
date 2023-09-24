@@ -1,0 +1,27 @@
+@include desktop {
+
+}
+
+@include laptop {
+	.sidebar-menu {
+		&-content {
+			top: 75px;
+		}
+	}
+}
+
+@include tablet {
+	.sidebar-menu {
+		&-content {
+			top: 65px;
+		}
+	}
+}
+
+@include mobile {
+	.sidebar-menu {
+		&-content {
+			top: 55px;
+		}
+	}
+}

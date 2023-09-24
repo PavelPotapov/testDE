@@ -8,26 +8,27 @@
 	</head>
 	<body>
 		<header class="header">
-			<a href="/">
+			<a href="/" class="header__logo">
 				<img
 					src="./public/images/svg/logo.svg"
 					alt="Logo"
-					class="header__logo"
 					width="48px"
 					height="32px"
 				/>
 			</a>
-			<button class="burger header__burger"></button>
+			<button type="button" class="burger header__burger"></button>
+			<div class="sidebar-menu-overlay"></div>
+			<div class="sidebar-menu-content">
+				<nav class="sidebar-menu-nav">
+					<ul class="sidebar-menu-list">
+						<li class="sidebar-menu-item"><a href="">Home</a></li>
+						<li class="sidebar-menu-item"><a href="">Contacts</a></li>
+						<li class="sidebar-menu-item"><a href="">About Us</a></li>
+					</ul>
+				</nav>
+			</div>
 		</header>
-		<div class="sidebar-menu">
-			<nav>
-				<ul>
-					<li><a href="">Главная</a></li>
-					<li><a href="">Контакты</a></li>
-					<li><a href="">О нас</a></li>
-				</ul>
-			</nav>
-		</div>
+
 		<main>
 			<section class="greeting">
 				<div class="container greeting__container">
@@ -46,70 +47,73 @@
 				<h2 class="increase__title">
 					What we do to help our client grow in digital era,
 				</h2>
-				<div class="increase__container-row">
-					<div class="increase__card increase__item1">
-						<div class="card">
-							<img
-								src="./public/images/svg/1.svg"
-								alt="card_logo"
-								class="card__logo"
-								width="182px"
-								height="132px"
-								loading="lazy"
-							/>
-							<p class="card__title">
-								Make Your business To Be Better Famous In Internet
-							</p>
-							<p class="card__info">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua.
-							</p>
-							<button type="button" class="card__btn">Learn more</button>
-						</div>
-					</div>
-					<div class="increase__container-col">
-						<div class="increase__card">
-							<div class="card">
-								<img
-									src="./public/images/svg/3.svg"
-									alt="card_logo"
-									class="card__logo"
-									width="182px"
-									height="132px"
-									loading="lazy"
-								/>
-								<p class="card__title">
-									Bring Technology To Your Comfrotable Home
-								</p>
-								<p class="card__info">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-									do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</p>
-								<button type="button" class="card__btn">Learn more</button>
+				<ul class="increase__list">
+					<li class="increase__item">
+						<div class="increase__container-row">
+							<div class="increase__left-item">
+								<div class="card">
+									<img
+										src="./public/images/svg/1.svg"
+										alt="card_logo"
+										class="card__logo"
+										width="182px"
+										height="132px"
+										loading="lazy"
+									/>
+									<p class="card__title">
+										Make Your business To Be Better Famous In Internet
+									</p>
+									<p class="card__info">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+										do eiusmod tempor incididunt ut labore et dolore magna
+										aliqua.
+									</p>
+									<button type="button" class="card__btn">Learn more</button>
+								</div>
+							</div>
+							<div class="increase__container-col">
+								<div class="card">
+									<img
+										src="./public/images/svg/3.svg"
+										alt="card_logo"
+										class="card__logo"
+										width="182px"
+										height="132px"
+										loading="lazy"
+									/>
+									<p class="card__title">
+										Bring Technology To Your Comfrotable Home
+									</p>
+									<p class="card__info">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+										do eiusmod tempor incididunt ut labore et dolore magna
+										aliqua.
+									</p>
+									<button type="button" class="card__btn">Learn more</button>
+								</div>
+								<div class="card">
+									<img
+										src="./public/images/svg/2.svg"
+										alt="card_logo"
+										class="card__logo"
+										width="182px"
+										height="132px"
+										loading="lazy"
+									/>
+									<p class="card__title">
+										Build Your Digital Product That Suitable For Your Need
+									</p>
+									<p class="card__info">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+										do eiusmod tempor incididunt ut labore et dolore magna
+										aliqua.
+									</p>
+									<button type="button" class="card__btn">Learn more</button>
+								</div>
 							</div>
 						</div>
-						<div class="increase__card">
-							<div class="card">
-								<img
-									src="./public/images/svg/2.svg"
-									alt="card_logo"
-									class="card__logo"
-									width="182px"
-									height="132px"
-									loading="lazy"
-								/>
-								<p class="card__title">
-									Build Your Digital Product That Suitable For Your Need
-								</p>
-								<p class="card__info">
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-									do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-								</p>
-								<button type="button" class="card__btn">Learn more</button>
-							</div>
-						</div>
-					</div>
-				</div>
+					</li>
+				</ul>
 			</section>
 			<section class="clients">
 				<div class="container">
@@ -150,7 +154,13 @@
 								enim ad minim veniam.
 							</p>
 						</div>
-						<button type="button" class="btn footer__btn">Let’s Talk</button>
+						<button
+							type="button"
+							class="btn footer__btn"
+							data-js-footer-btn="footer-btn"
+						>
+							Let’s Talk
+						</button>
 					</div>
 				</div>
 				<!-- <div class="footer__separator"></div> -->
@@ -222,88 +232,109 @@
 				</div>
 			</div>
 		</footer>
-		<div class="modal">
-			<div class="modal__content">
+		<div class="modal" data-js-modal="modal">
+			<div class="modal__content" data-js-modal-content="modal-content">
 				<div class="modal__close">
-					<div class="modal__cross"></div>
+					<div
+						class="modal__cross modal__cross-form"
+						data-js-cross-form="cross-form"
+					></div>
 				</div>
 				<form
-					class="form"
-					data-form="form-contact"
+					class="form modal__form"
 					action
+					novalidate
+					data-js="form"
 					data-js-form='{"url":"https://jsonplaceholder.typicode.com/todos/","method":"GET"}'
 				>
-					<div class="form-row">
-						<p class="form-title">SEND US MESSAGE</p>
+					<div class="form__row">
+						<p class="form__title">SEND US MESSAGE</p>
 					</div>
-					<div class="form-col">
-						<div class="form-row">
-							<div class="form-col">
-								<label class="form-label" for="name">Name</label>
+					<div class="form__col">
+						<div class="form__row">
+							<div class="form__col">
+								<label class="form__label" for="name">Name</label>
 								<input
-									class="form-input"
+									class="form__input"
 									placeholder="Your Name"
 									type="text"
 									name="name"
-									id="form-input-name"
+									data-js-input-name="input-name"
+									id="form__input-name"
 								/>
 								<span
-									class="validate validate-name"
-									data-form="form-input-name"
+									class="form__validate form__validate-name"
+									data-form="form__input-name"
 								></span>
 							</div>
 						</div>
 
-						<div class="form-row">
-							<div class="form-col">
-								<label class="form-label" for="email">Email</label>
+						<div class="form__row">
+							<div class="form__col">
+								<label class="form__label" for="email">Email</label>
 								<input
-									class="form-input"
+									class="form__input"
 									placeholder="Your Email"
 									type="email"
 									name="email"
-									id="form-input-email"
+									data-js-input-email="input-email"
+									id="form__input-email"
 								/>
 								<span
-									class="validate validate-email"
-									data-form="form-input-email"
+									class="form__validate form__validate-email"
+									data-form="form__input-email"
 								></span>
 							</div>
 						</div>
 
-						<div class="form-row">
-							<div class="form-col">
-								<label class="form-label" for="message">Message</label>
+						<div class="form__row">
+							<div class="form__col">
+								<label class="form__label" for="message">Message</label>
 								<textarea
-									class="form-textarea"
+									class="form__textarea"
 									placeholder="Your Message"
 									name="message"
-									id="form-textarea"
+									data-js-input-text="input-text"
+									id="form__textarea"
 								></textarea>
 								<span
-									class="validate validate-text-area"
-									data-form="form-textarea"
+									class="form__validate form__validate-text-area"
+									data-form="form__textarea"
 								></span>
 							</div>
 						</div>
 
 						<input
 							type="submit"
-							class="form-submit"
+							class="form__submit"
 							value="SUBMIT"
-							data-form="form-contact"
-							id="form-submit"
+							data-js-form-submit="form-submit"
+							id="form__submit"
 						/>
-						<span class="validate" data-form="form-submit"></span>
+						<span class="form__validate" data-form="form__submit"></span>
 					</div>
 				</form>
 			</div>
-			
+			<div class="modal__popup" data-js-modal-popup="modal-popup">
+				<div class="modal__close">
+					<div
+						class="modal__cross modal__cross-popup"
+						data-js-cross-popup="cross-popup"
+					></div>
+				</div>
+				<div class="modal__popup-content">
+					<img
+						src="./public/images/svg/success.svg"
+						alt="Успешно"
+						class="modal__popup-img"
+						width="100%"
+						height="200px"
+					/>
+					<p class="modal__popup-text">Данные отправлены</p>
+				</div>
+			</div>
 		</div>
-		<div class="modal__popup">
-			<div class='modal__popup-content'></div>
-			<div class="modal__overlay"></div>
-		</div>
+
 		<script type="module" src="/main.js"></script>
 		<script type="module" src="/form.js"></script>
 	</body>

@@ -62,6 +62,7 @@
 		margin-left: 24px;
 		position: absolute;
 		top: 5px;
+		cursor: pointer;
 	}
 }
 
@@ -69,5 +70,12 @@
 	.card {
 		width: 325px;
 		padding: 30px;
+	}
+}
+
+@include laptop {
+	.card {
+		width: 335px;
+		padding: 35px;
 	}
 }

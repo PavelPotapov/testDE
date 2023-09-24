@@ -4,6 +4,8 @@
 		rgba(152, 195, 232, 0.2) 8.84%,
 		rgba(152, 195, 232, 0) 31.12%
 	);
+	padding-left: 212px;
+	padding-top: 110px;
 
 	&__container {
 		background-image: url("../../public/images/svg/illustration.svg");
@@ -13,8 +15,9 @@
 	}
 
 	&__title {
-		margin-left: 212px;
-		margin-top: 110px;
+		// margin-left: 212px;
+		// margin-top: 110px;
+		margin-bottom: 32px;
 		max-width: 510px;
 		color: var(--dark-blue);
 		font-family: var(--second-font);
@@ -27,7 +30,8 @@
 
 	&__subtitle {
 		max-width: 425px;
-		margin-left: 213px;
+		// margin-left: 213px;
+		margin-bottom: 71px;
 		font-family: var(--main-font);
 		font-size: 16px;
 		font-style: normal;
@@ -39,7 +43,7 @@
 	}
 
 	&__btn {
-		margin-top: 71px;
-		margin-left: 213px;
+		// margin-top: 71px;
+		// margin-left: 213px;
 	}
 }
