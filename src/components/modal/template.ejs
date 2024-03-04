@@ -1,0 +1,22 @@
+
+<div class="modal" id='modal-success'>
+	<button type="button" class="modal__close" data-js-modal-close></button>
+	<div class="modal__content" data-js-modal-content>
+		The data was successfully sent. You will be contacted in the near future
+	</div>
+</div>
+
+<div class="modal" id='modal-error'>
+	<button type="button" class="modal__close" data-js-modal-close></button>
+	<div class="modal__content modal--error" data-js-modal-content>
+		Some error, try later
+	</div>
+</div>
+
+<div class="modal" id='modal-form-contact'>
+	<button type="button" class="modal__close" data-js-modal-close></button>
+	<div class="modal__content" data-js-modal-content>
+        <%- require("../form/template.ejs")()  %>
+	</div>
+</div>
+

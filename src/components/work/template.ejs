@@ -1,0 +1,20 @@
+<% const title = "What we do to help our client grow in digital era," %>
+<% const checkArgs = require("../../js/utils/checkArgs.js") %>
+<% if (!checkArgs(arguments))  {%>
+	<% props = require("./data.json") %>
+<% } else { %>
+<% } %>
+
+<% /* Если в компонент не было передано props, то грузим из data.json */ %>
+<section class="work">
+	<div class="container">
+		<h2 class='title work__title'>
+			<%- title %>
+		</h2>
+		<ul class='work__list'>
+			<% props.cards.forEach(function(card) { %>
+				<li class="work__item"><%- require('../card/template.ejs')({props: card}) %></li>
+			<% }); %> 
+		</ul>
+	</div>
+</section>

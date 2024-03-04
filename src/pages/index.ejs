@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="flowContainer" data-js-inert-element>
+			<%- require('../components/header/template.ejs')({props:{"link": "#", "image": "./images/icons/logo.svg"}}) %>
+			<main>
+				<%- require('../components/intro/template.ejs')() %>
+				<%- require('../components/work/template.ejs')() %>
+				<%- require("../components/clients/template.ejs")() %>
+			</main>
+			<%- require("../components/footer/template.ejs")() %>
+			<!-- Sidebar -->
+			<%- require('../components/sidebar/template.ejs')(
+			{props: 
+				{"items": 	[
+								{"name": "Home","link": "/"},
+								{"name": "Contacts","link": "/"},
+								{"name": "About Us","link": "/"}
+							],
+
+				"contacts": {
+								"phone": "+62-812-7313-4321",
+								"email": "hello.afrian@gmail.com"
+							} 
+				}
+			}) %>
+		</div>
+		<!-- Modals & Overlays -->
+		<%- require("../components/modal/template.ejs")() %>
+		<%- require('../components/overlay/template.ejs')() %>
+	</body>
+</html>

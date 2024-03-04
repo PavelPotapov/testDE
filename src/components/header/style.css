@@ -1,0 +1,19 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--top-indention);
+  padding-left: var(--side-indention);
+  padding-right: var(--side-indention);
+  background-color: var(--color-white);
+
+  &__burger {
+    position: relative;
+    z-index: 3;
+  }
+}

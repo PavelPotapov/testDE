@@ -1,0 +1,35 @@
+@import url("./custom-media.css");
+
+:root {
+  --font-main: "Gilroy";
+  --font-second: "Galien";
+  --color-light-blue: #5a98d0;
+  --color-dark-blue: #1f3f68;
+  --color-accent-blue: #316099;
+  --color-white: #fff;
+  --color-gray: #adbfd6;
+  --color-light-gray: #bdd6ec;
+  --color-light-gray2: #aec5de;
+  --color-dark-gray: #798ca4;
+  --color-accent-gray: #83a0c2;
+  --color-light-green: #6fcf97;
+  --placeholder-color: #d2d9e1;
+  --side-indention: 83px;
+  --top-indention: 40px;
+  --sidebar-width: 360px;
+  --container-width: 940px;
+  --tablet-s: 1024px;
+  --mobile-xs: 480px;
+
+  /* ScrollBar */
+  --scrollbar-width-small: 12px;
+  --scrollbar-border-radius: 4px;
+
+  @media (--desktop-xl) {
+    --side-indention: 30px;
+  }
+
+  @media (--tablet-xxs) {
+    --side-indention: 20px;
+  }
+}

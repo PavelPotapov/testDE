@@ -1,0 +1,92 @@
+@import url("../../css/custom-media.css");
+
+.modal {
+  --modal-padding: 56px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: none;
+  height: max-content;
+  max-height: 100dvh;
+  min-height: 200px;
+  max-width: 88vw;
+  min-width: 200px;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  box-shadow: 5px 10px 50px 0 rgb(16 112 177 / 0.2);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  pointer-events: none;
+
+  &--error {
+    color: red;
+  }
+
+  @media (--mobile) {
+    width: 100%;
+    max-width: 95vw;
+    max-height: 95dvh;
+  }
+
+  &__content {
+    padding: var(--modal-padding);
+    position: relative;
+
+    @media (--mobile) {
+      --modal-padding: 35px;
+    }
+  }
+
+  &__close {
+    --btn-size: 35px;
+    --top-indention: 15px;
+
+    position: sticky;
+    top: var(--top-indention);
+    z-index: 5;
+    display: block;
+    width: var(--btn-size);
+    height: var(--btn-size);
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:focus:not(:active) {
+      outline: 2px solid var(--color-light-green);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: var(--btn-size);
+      height: 3px;
+      background-color: var(--color-dark-blue);
+      transform: rotate(45deg);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: var(--btn-size);
+      height: 3px;
+      background-color: var(--color-dark-blue);
+      transform: rotate(-45deg);
+    }
+  }
+
+  &.is-open {
+    display: block;
+    animation: fadeInFromNone;
+    animation-duration: 0.5s;
+    pointer-events: auto;
+  }
+}

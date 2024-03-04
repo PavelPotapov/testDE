@@ -1,0 +1,20 @@
+{
+	"items": [
+		{
+			"name": "Home",
+			"link": "/"
+		},
+		{
+			"name": "Contacts",
+			"link": "/"
+		},
+		{
+			"name": "About Us",
+			"link": "/"
+		}
+	],
+	"contacts": {
+		"phone": "+62-812-7313-4321",
+		"email": "hello.afrian@gmail.com"
+	}
+}

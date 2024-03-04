@@ -1,0 +1,76 @@
+@import url("../../css/custom-media.css");
+
+.work {
+  --top-indention-work: 180px;
+
+  width: 100%;
+  padding-top: var(--top-indention-work);
+
+  &__title {
+    width: 100%;
+    max-width: 358px;
+    color: var(--color-accent-blue);
+  }
+
+  @media (--tablet-s) {
+    --top-indention-work: 80px;
+
+    padding-left: var(--side-indention);
+    padding-right: var(--side-indention);
+
+    &__title {
+      max-width: var(--tablet-s);
+      margin: 0 auto;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: -138px;
+    margin-bottom: 212px;
+
+    @media (--tablet-s) {
+      margin-bottom: 80px;
+    }
+
+    @media (--tablet-s) {
+      gap: 35px;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    max-width: 380px;
+
+    @media (--tablet-s-over) {
+      &:nth-child(even) {
+        align-self: start;
+        margin-left: 80px;
+        margin-top: -225px;
+      }
+
+      &:nth-child(odd) {
+        align-self: flex-end;
+        margin-top: -225px;
+      }
+
+      &:nth-child(2) {
+        margin-top: -230px;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    @media (--tablet-s) {
+      &:first-child {
+        margin-top: 150px;
+      }
+    }
+  }
+}

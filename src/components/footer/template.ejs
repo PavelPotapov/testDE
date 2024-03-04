@@ -1,0 +1,47 @@
+<footer class="footer">
+    <div class="container footer__wrapper">
+        <div class="footer__top">
+            <div class="footer__text">
+                <h2 class='footer__title'>Intersted to woek with our team?</h2>
+                <p class='footer__subtitle'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+            <button type='button' class='btn footer__btn' data-js-modal-open='{"src":"#modal-form-contact"}'>Let’s Talk</button>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__contacts">
+                <a href="#">
+                    <div class="footer__logo">
+                        <img class='footer__logo-img' src="./images/icons/light-logo.svg" alt="Logo" loading='lazy' width='48' height='48'>
+                        <h2 class='footer__logo-title'>Afrianska</h2>
+                    </div>
+                </a>
+                <ul class="footer__contacts-list">
+                    <li class="footer__contacts-item footer__contacts-item--A"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></li>
+                    <li class="footer__contacts-item footer__contacts-item--T"><a href="tel:+6281273134321">+62-812-7313-4321</a></li>
+                    <li class="footer__contacts-item footer__contacts-item--E"><a href="mailto:hello.afrian@gmail.com">hello.afrian@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="footer__aboutus">
+                <ul>
+                    <li class='footer__list-title'>About US</li>
+                    <li class='footer__list-item'><a href="#">About</a></li>
+                    <li class='footer__list-item'><a href="">What We Do</a></li>
+                    <li class='footer__list-item'><a href="#">Project</a></li>
+                    <li class='footer__list-item'><a href="#">How It Work With Us</a></li>
+                </ul>
+            </div>
+            <div class="footer__followus">
+                <ul>
+                    <li class='footer__list-title'>Follow US</li>
+                    <li class='footer__list-item'><a href="#">Instagram</a></li>
+                    <li class='footer__list-item'><a href="#">Facebook</a></li>
+                    <li class='footer__list-item'><a href="#">LinkedIn</a></li>
+                    <li class='footer__list-item'><a href="#">Youtube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <%- require('../copyright/template.ejs')({props: {year: "2019"}}) %>
+        </div>
+    </div>
+</footer>

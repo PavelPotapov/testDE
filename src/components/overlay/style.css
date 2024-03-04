@@ -1,0 +1,26 @@
+@import url("../../css/animation.css");
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-index, 2);
+  height: 100dvh;
+  width: 100vw;
+  opacity: 0;
+  backdrop-filter: blur(var(--blurring-forces, 8px));
+  visibility: hidden;
+  pointer-events: none;
+
+  &.is-active {
+    animation: fadeInFromNone 0.5s ease-out forwards;
+    pointer-events: auto;
+  }
+
+  &.z-index3 {
+    z-index: 3;
+  }
+
+  &.z-index4 {
+    z-index: 4;
+  }
+}

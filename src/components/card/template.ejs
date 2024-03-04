@@ -1,0 +1,15 @@
+<% const checkArgs = require("../../js/utils/checkArgs.js") %>
+<% if (!checkArgs(arguments))  {%>
+	<% props = require("./data.json") %>
+<% } else { %>
+<% } %>
+<% /* Если в компонент не было передано props, то грузим из data.json */ %>
+<article class="card">
+	<img src="<%- props.image %>" alt="LogoCard"
+	class="card__img <%- props.extraClass %>" width="264" height="132" loading='lazy'/>
+	<div class="card__content">
+		<h3 class="card__title"><%- props.title %></h3>
+		<p class="card__text"><%- props.text %></p>
+		<a href="<%- props.link %>" class="card__link">Learn More</a>
+	</div>
+</article>

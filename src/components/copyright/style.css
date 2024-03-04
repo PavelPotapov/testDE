@@ -1,0 +1,18 @@
+@import url("../../css/custom-media.css");
+
+.copyright {
+  --copyright-width: 300px;
+
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: var(--copyright-width);
+  font-size: 16px;
+  line-height: 1.625;
+  letter-spacing: 0.8px;
+  color: var(--color-accent-gray);
+
+  @media (--mobile-xxs) {
+    --copyright-width: 250px;
+  }
+}

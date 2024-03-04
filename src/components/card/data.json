@@ -1,0 +1,7 @@
+{
+	"extraClass": "card__img--upper",
+	"image": "/image/icons/default.svg",
+	"title": "Title card",
+	"text": "Some text",
+	"link": "Some link"
+}

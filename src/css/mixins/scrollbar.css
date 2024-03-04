@@ -1,0 +1,16 @@
+@define-mixin scrollbar $color: blue, $width, $br {
+  /* Для WebKit браузеров */
+  &::-webkit-scrollbar {
+    background-color: $color;
+    width: $width;
+    border-radius: $br;
+  }
+}
+
+@define-mixin scrollbar-thumb $color, $br {
+  /* Для WebKit браузеров */
+  &::-webkit-scrollbar-thumb {
+    background-color: $color;
+    border-radius: $br;
+  }
+}

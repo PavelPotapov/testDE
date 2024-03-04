@@ -1,0 +1,83 @@
+@import url("../../css/custom-media.css");
+@import url("../../css/mixins/scrollbar.css");
+
+.sidebar-menu {
+  --sidebar-border-radius: 25px;
+
+  position: fixed;
+  top: calc(var(--top-indention) + 52px);
+  right: calc(-1 * var(--sidebar-width));
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  max-width: var(--sidebar-width);
+  height: 100%;
+  max-height: calc(100dvh - 88px);
+  padding: 35px 0 25px 25px;
+  background-color: var(--color-dark-blue);
+  border-radius: var(--sidebar-border-radius) 0 0 0;
+  transition: right 0.3s;
+
+  &__nav,
+  &__social {
+    max-width: calc(var(--sidebar-width) - 45px);
+  }
+
+  &__nav {
+    height: max-content;
+    padding: 2px;
+    overflow-y: auto;
+
+    @mixin scrollbar var(--color-white, #fff), 12px, 12px;
+    @mixin scrollbar-thumb var(--color-light-blue, #d2d9e1), 12px;
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+  }
+
+  &.is-active {
+    right: 0;
+  }
+
+  @media (--mobile-xs) {
+    --sidebar-width: 100vw;
+    --sidebar-border-radius: 0;
+  }
+
+  &__item {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 0.89;
+    letter-spacing: 1px;
+    color: var(--color-white);
+
+    &--social {
+      font-size: 20px;
+    }
+
+    &:hover {
+      color: var(--color-light-green);
+    }
+
+    &--link {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      padding: 5px;
+      border-radius: 5px;
+
+      &:focus {
+        outline: 1px solid var(--color-light-green);
+      }
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 25px;
+  }
+}

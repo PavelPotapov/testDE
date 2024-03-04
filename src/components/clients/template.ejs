@@ -1,0 +1,32 @@
+<% const title = "Our Beloved Client" %>
+<% const message = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." %>
+<% clients = require("./data.json") %>
+<% defaultClient = {"name": "LOGO CLIENT", "link": "/"} %>
+
+<% /* Здесь надо бы реализовать загрузку из data.json, только если не загрузили props в компонент (как в sidebar, например), но у меня уже не было времени... */ %>
+<section class='clients'>
+    <div class="container">
+        <div class="clients__top">
+            <h2 class='title clients__title'> <%- title %> </h2>
+            <p class='clients__subtitle'> <%- message %> </p>
+        </div>
+        <div class="clients__bottom">
+            <ul class='clients__list'>
+                <% Object.keys(clients).forEach(function(client) { %>
+    	            <li class='clients__item'>
+                        <a class='clients__item-link' href='<%- clients[client].link %>'>
+                            <% if (clients[client].image) { %> 
+                                <img src="<%= clients[client].image %>" alt="LogoClient" class="clients__item-logo" loading='lazy'/>
+                            <% } else { %>
+                                LOGO CLIENT
+                            <% }%>
+                        </a>
+                    </li>
+ 	            <% }) %> 
+                <li class='clients__item clients__item--more'><a href="#">More Client</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+

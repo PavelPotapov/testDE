@@ -1,0 +1,11 @@
+@font-face {
+  font-family: Galien;
+  font-display: swap;
+  src: url("../fonts/Galien-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-display: swap;
+  src: url("../fonts/Gilroy-Regular.woff2") format("woff2");
+}

@@ -1,0 +1,4 @@
+.toast_success {
+  background: var(--color-light-green) !important;
+  border-radius: 10px !important;
+}

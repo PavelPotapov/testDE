@@ -1,0 +1,28 @@
+.btn {
+  --border-width: 2px;
+
+  display: block;
+  cursor: pointer;
+  padding: 15px 5px;
+  font-size: 16px;
+  line-height: 1.625;
+  text-align: center;
+  color: var(--color-white);
+  letter-spacing: 0.64px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: var(--color-light-blue);
+  box-shadow: 5px 10px 20px 0 rgb(53 110 173 / 0.2);
+  border-radius: 10px;
+  border: var(--border-width) solid transparent;
+  overflow: hidden;
+  transition: background-color 0.3s ease-out;
+
+  &:active {
+    border: var(--border-width) solid var(--color-light-green);
+  }
+
+  &:hover {
+    background-color: var(--color-dark-blue);
+  }
+}

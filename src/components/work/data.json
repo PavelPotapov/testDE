@@ -1,0 +1,23 @@
+{
+	"cards": [
+		{
+			"image": "./images/icons/3.svg",
+			"title": "Make Your business To Be Better Famous In Internet",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			"link": "#",
+			"extraClass": "card__img--upper"
+		},
+		{
+			"image": "./images/icons/2.svg",
+			"title": "Make Your business To Be Better Famous In Internet",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			"link": "#"
+		},
+		{
+			"image": "./images/icons/1.svg",
+			"title": "Make Your business To Be Better Famous In Internet",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			"link": "#"
+		}
+	]
+}

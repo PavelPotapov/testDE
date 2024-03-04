@@ -1,0 +1,140 @@
+@import url("../../css/custom-media.css");
+
+.clients {
+  --color-line: #95b7d6;
+  --top-indention: 96px;
+  --bottom-indention: 125px;
+
+  padding-top: var(--top-indention);
+  padding-bottom: var(--bottom-indention);
+  color: var(--color-white);
+  background-color: var(--color-light-blue);
+  border-radius: 200px 0 0;
+
+  @media (--tablet-s) {
+    padding-left: var(--side-indention);
+    padding-right: var(--side-indention);
+  }
+
+  &__top {
+    display: flex;
+    gap: 97px;
+    margin-bottom: 111px;
+
+    @media (--tablet-s) {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    flex-basis: 230px;
+
+    @media (--tablet-s) {
+      flex-basis: auto;
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    max-width: 540px;
+    font-size: 16px;
+    line-height: 1.625;
+    letter-spacing: 0.8px;
+    color: var(--color-light-gray);
+
+    @media (--tablet-s) {
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+
+    @media (--tablet-s) {
+      max-width: 470px;
+      margin: 0 auto;
+    }
+
+    @media (--mobile-s) {
+      max-width: 350px;
+      justify-content: center;
+    }
+  }
+
+  &__item-logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__item-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    flex-basis: 235px;
+    align-items: center;
+    height: 128px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: rgb(31 63 104 / 0.2);
+    }
+
+    &--more {
+      background-color: rgb(31 63 104 / 0.2);
+
+      &:hover {
+        background-color: var(--color-dark-blue);
+      }
+    }
+
+    /* Код написан под минимум 8 элементов с логотипами клиентов */
+    @media (--tablet-s-over) {
+      &:not(:nth-child(4n + 4)) {
+        border-right: 1px solid var(--color-line);
+      }
+
+      &:nth-child(n) {
+        border-top: 1px solid var(--color-line);
+      }
+
+      &:nth-child(-n + 4) {
+        border-top: none;
+      }
+    }
+
+    @media (--tablet-s) {
+      &:nth-child(n) {
+        border-top: 1px solid var(--color-line);
+      }
+
+      &:nth-child(-n + 2) {
+        border-top: none;
+      }
+
+      &:nth-child(2n + 1) {
+        border-right: 1px solid var(--color-line);
+      }
+    }
+
+    @media (--mobile-s) {
+      &:nth-child(2) {
+        border-top: 1px solid var(--color-line);
+      }
+
+      &:nth-child(n) {
+        border-right: none;
+      }
+    }
+  }
+}

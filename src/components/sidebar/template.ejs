@@ -1,0 +1,30 @@
+<% const checkArgs = require("../../js/utils/checkArgs.js") %>
+<% if (!checkArgs(arguments))  {%>
+	<% props = require("./data.json") %>
+<% } else { %>
+<% } %>
+
+<% /* Если в компонент не было передано props, то грузим из data.json */ %>
+<div class="sidebar-menu" data-js-sidebar-menu>
+	<div tabindex="-1" class='hidden-focus' data-js-hidden-focus>
+	</div>
+	<nav class="sidebar-menu__nav">
+		<ul class="sidebar-menu__list">
+			<% props.items.forEach(function(item) { %>
+    	            <li class='sidebar-menu__item'>
+                        <a href='<%- item.link %>' class='sidebar-menu__item--link'>
+                            <%- item.name %>
+                        </a>
+                    </li>
+ 	        <% }) %> 
+		</ul>
+	</nav>
+	<div class="sidebar-menu__social">
+		<a class='sidebar-menu__item sidebar-menu__item--social sidebar-menu__item--link' href="tel:<%- props.contacts.phone.replace(/[^\d+]+/g, ""); %>">
+			<%- props.contacts.phone %>
+		</a>
+		<a class='sidebar-menu__item sidebar-menu__item--social sidebar-menu__item--link' href="mailto:<%- props.contacts.email %>">
+			<%- props.contacts.email %>
+		</a>
+	</div>
+</div>

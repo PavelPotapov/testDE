@@ -1,0 +1,53 @@
+<form
+    id="form-contact"
+    name="form-contact"
+    class="form-contact"
+    data-js-form-name='form-contact'
+    data-js-form='{"url":"https://jsonplaceholder.typicode.com/posts", "method":"POST", "showModalAfterSuccess": "#modal-success", "isResetAfterSuccess": true, "showModalAfterError": "#modal-error"}'
+    novalidate
+>
+    <fieldset class='form-contact__fieldset'>
+        <legend class="form-contact__legend">SEND US MESSAGE</legend>
+        <div class="form-contact__row" data-js-form-row>
+            <label for="user-name" class="form-contact__label">Full Name</label>
+            <input
+                type="text"
+                name="name"
+                id="user-name"
+                class="form-contact__input"
+                placeholder="Your name"
+                data-js-input-required
+            />
+            <span class="form-contact__validate-message" data-js-form-validate-message></span>
+        </div>
+        <div class="form-contact__row" data-js-form-row>
+            <label for="user-email" class="form-contact__label">Email</label>
+            <input
+                type="email"
+                name="user-email"
+                id="user-email"
+                class="form-contact__input"
+                placeholder="Your email"
+                data-js-input-required="email"
+            />
+            <span class="form-contact__validate-message" data-js-form-validate-message></span>
+        </div>
+        <div class="form-contact__row" data-js-form-row>
+            <label for="user-message" class="form-contact__label">Message</label>
+            <textarea
+                autocomplete="off"
+                name="user-message"
+                id="user-message"
+                cols="50"
+                rows="10"
+                class="form-contact__input form-contact__textarea"
+                placeholder="Your message"
+                data-js-input-required
+            ></textarea>
+            <span class="form-contact__validate-message" data-js-form-validate-message></span>
+        </div>
+        <button type="submit" class="form-contact__submit-btn" data-js-form-submit-btn>
+            Отправить
+        </button>
+    </fieldset>
+</form>
