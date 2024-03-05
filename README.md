@@ -11,8 +11,8 @@
 **Клонируйте репозиторий:**
 
 ```bash
-git clone https://github.com/PavelPotapov/testWhiteWhale/
-cd testWhiteWhale
+git clone https://github.com/PavelPotapov/testDE.git
+cd testDE
 ```
 
 **Установите зависимости:**
