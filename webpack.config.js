@@ -8,6 +8,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const StylelintPlugin = require("stylelint-webpack-plugin")
 const ESLintPlugin = require("eslint-webpack-plugin")
+const TerserPlugin = require("terser-webpack-plugin")
 const autoprefixer = require("autoprefixer")
 const webpack = require("webpack")
 //Копирует отдельные файлы или целые каталоги, которые уже существуют, в каталог сборки.
@@ -57,7 +58,7 @@ module.exports = (env) => {
           __dirname,
           "src",
           "pages",
-          "index.ejs"
+          "index.ejs",
         )}`,
       }),
       new webpack.ProgressPlugin(),
@@ -116,7 +117,8 @@ module.exports = (env) => {
       ],
     },
     optimization: {
-      minimizer: [new CssMinimizerPlugin()],
+      minimize: true,
+      minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
     },
     devtool: isDev ? "inline-source-map" : false,
   }
