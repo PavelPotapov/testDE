@@ -1,9 +1,10 @@
+
 <form
     id="form-contact"
     name="form-contact"
     class="form-contact"
     data-js-form-name='form-contact'
-    data-js-form='{"url":"https://jsonplaceholder.typicode.com/posts", "method":"POST", "showModalAfterSuccess": "#modal-success", "isResetAfterSuccess": true, "showModalAfterError": "#modal-error"}'
+    data-js-form='<%- JSON.stringify(require('./form-config.json')) %>'
     novalidate
 >
     <fieldset class='form-contact__fieldset'>
@@ -51,3 +52,6 @@
         </button>
     </fieldset>
 </form>
+<button type="submit" class="form-contact__submit-btn" form="form-contact" data-js-form-submit-btn>
+    Отправить
+</button>

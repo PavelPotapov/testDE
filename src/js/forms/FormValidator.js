@@ -69,7 +69,7 @@ export class FormValidator {
       (e) => {
         this.#blurHandler(e)
       },
-      true
+      true,
     )
   }
 
@@ -133,10 +133,9 @@ export class FormValidator {
    * @returns {Array<HTMLElement>} - Возращает массив, внутри которого будут input / textarea и тд. которые подлежат валидации
    */
   static getFormElementsForValidate(form) {
-    const requiredElements = [...form.elements].filter((el) =>
-      el.hasAttribute(formAttrs.inputRequired)
+    return [...form.elements].filter((el) =>
+      el.hasAttribute(formAttrs.inputRequired),
     )
-    return requiredElements
   }
 
   /**
@@ -160,7 +159,7 @@ export class FormValidator {
 
     const validationResponse = FormValidator.getValidation(
       element.value,
-      validateRules
+      validateRules,
     )
     return validationResponse
   }
@@ -174,20 +173,15 @@ export class FormValidator {
     const parentElement =
       element.closest(FormValidator.selectors.formRow) ?? element.parentNode
     const msgContainer = parentElement.querySelector(
-      FormValidator.selectors.notifyMsg
+      FormValidator.selectors.notifyMsg,
     )
     if (msgContainer) msgContainer.textContent = validationResponse.message
-    if (validationResponse.isValid) {
-      parentElement?.classList.add(FormValidator.classes.isValid)
-      element.classList.add(FormValidator.classes.isValid)
-      parentElement?.classList.remove(FormValidator.classes.isInvalid)
-      element.classList.remove(FormValidator.classes.isInvalid)
-    } else {
-      parentElement?.classList.add(FormValidator.classes.isInvalid)
-      element.classList.add(FormValidator.classes.isInvalid)
-      parentElement?.classList.remove(FormValidator.classes.isValid)
-      element.classList.remove(FormValidator.classes.isValid)
-    }
+    const forceMode = validationResponse.isValid
+
+    parentElement?.classList.toggle(FormValidator.classes.isValid, forceMode)
+    element.classList.toggle(FormValidator.classes.isValid, forceMode)
+    parentElement?.classList.toggle(FormValidator.classes.isInvalid, !forceMode)
+    element.classList.toggle(FormValidator.classes.isInvalid, !forceMode)
   }
 
   /**
@@ -211,7 +205,7 @@ export class FormValidator {
     const formElementsForValidate =
       FormValidator.getFormElementsForValidate(form)
     formElementsForValidate.forEach((formElement) =>
-      FormValidator.removeValidVisible(formElement)
+      FormValidator.removeValidVisible(formElement),
     )
   }
 

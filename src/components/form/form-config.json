@@ -1,0 +1,7 @@
+{
+  "url": "https://jsonplaceholder.typicode.com/posts",
+  "method": "POST",
+  "showModalAfterSuccess": "#modal-success",
+  "isResetAfterSuccess": true,
+  "showModalAfterError": "#modal-error"
+}
